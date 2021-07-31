@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{C7443474-E7F3-47C2-7A7E-9050C197AC78}</ProjectGuid>
+    <ProjectGuid>{71B21EE9-D21C-5847-A44D-6E2B863B925A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -56,26 +56,26 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Soja Exiles\SE Basic Assets\Scripts and Animations\First Person Player\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\SlidingDoorMotion.cs" />
     <Compile Include="Assets\Scripts\PickCoin.cs" />
+    <Compile Include="Assets\Soja Exiles\SE Basic Assets\Scripts and Animations\Drawer\X Axis\Drawer_Pull_X.cs" />
     <Compile Include="Assets\Scripts\KnightBehavior.cs" />
+    <Compile Include="Assets\Soja Exiles\SE Basic Assets\Scripts and Animations\Drawer\Z Axis\Drawer_Pull_Z.cs" />
     <Compile Include="Assets\Scripts\GunShoot.cs" />
     <Compile Include="Assets\Scripts\GunShooting.cs" />
     <Compile Include="Assets\Scripts\PickGun.cs" />
+    <Compile Include="Assets\Soja Exiles\Bar &amp; Liquor Cabinets\Scripts &amp; Animation\TableFlipR.cs" />
+    <Compile Include="Assets\Soja Exiles\SE Basic Assets\Scripts and Animations\Doors\opencloseDoor.cs" />
+    <Compile Include="Assets\Soja Exiles\SE Basic Assets\Scripts and Animations\First Person Player\MouseLook.cs" />
+    <Compile Include="Assets\Soja Exiles\SE Basic Assets\Scripts and Animations\Windows\opencloseWindow.cs" />
     <Compile Include="Assets\Scripts\FPMotion.cs" />
     <Compile Include="Assets\Scripts\DrawerMotion.cs" />
     <Compile Include="Assets\Sounds\Zero Rare\Retro Sound Effects\Demo\Demo.cs" />
-    <Compile Include="Assets\Scripts\DoorMotion.cs" />
-    <Compile Include="Assets\Soja Exiles\SE Basic Assets\Scripts and Animations\Drawer\Z Axis\Drawer_Pull_Z.cs" />
-    <Compile Include="Assets\Soja Exiles\SE Basic Assets\Scripts and Animations\Windows\opencloseWindow1.cs" />
-    <Compile Include="Assets\Soja Exiles\SE Basic Assets\Scripts and Animations\First Person Player\MouseLook.cs" />
-    <Compile Include="Assets\Soja Exiles\SE Basic Assets\Scripts and Animations\Windows\opencloseWindow.cs" />
-    <Compile Include="Assets\Soja Exiles\SE Basic Assets\Scripts and Animations\First Person Player\PlayerMovement.cs" />
     <Compile Include="Assets\Soja Exiles\SE Basic Assets\Scripts and Animations\Doors\opencloseDoor1.cs" />
-    <Compile Include="Assets\Soja Exiles\Bar &amp; Liquor Cabinets\Scripts &amp; Animation\TableFlipR.cs" />
-    <Compile Include="Assets\Soja Exiles\SE Basic Assets\Scripts and Animations\Drawer\X Axis\Drawer_Pull_X.cs" />
+    <Compile Include="Assets\Scripts\DoorMotion.cs" />
     <Compile Include="Assets\Soja Exiles\Bar &amp; Liquor Cabinets\Scripts &amp; Animation\TableFlipL.cs" />
-    <Compile Include="Assets\Soja Exiles\SE Basic Assets\Scripts and Animations\Doors\opencloseDoor.cs" />
+    <Compile Include="Assets\Soja Exiles\SE Basic Assets\Scripts and Animations\Windows\opencloseWindow1.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Bed &amp; Bath Furniture Pack\Documentation.txt" />
@@ -656,43 +656,43 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Unity.VSCode.Editor.csproj">
-      <Project>{6B9CAE43-D24D-DBF8-EA6F-4B426B8696FC}</Project>
+      <Project>{DB9A303F-1DD1-EC16-9D55-53D7E73D4ED3}</Project>
       <Name>Unity.VSCode.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.TextMeshPro.Editor.csproj">
-      <Project>{048CD89E-675A-18C0-21CE-3672EAAC7603}</Project>
+      <Project>{9683327E-6069-81DB-0DD9-DB6C47A24116}</Project>
       <Name>Unity.TextMeshPro.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VisualStudio.Editor.csproj">
-      <Project>{A525214C-2D84-3837-1B6C-4C02F4B04566}</Project>
+      <Project>{016C419F-5890-6CF9-CC15-C0FBC1873DFC}</Project>
       <Name>Unity.VisualStudio.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Timeline.Editor.csproj">
-      <Project>{8DDEC2EC-76B2-D7F2-E8F9-9E517D8AC0AF}</Project>
+      <Project>{C6F9532C-4282-1D32-AB69-39909511FD9C}</Project>
       <Name>Unity.Timeline.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Timeline.csproj">
-      <Project>{3F1164C7-1076-8305-A32A-47EBD48888EA}</Project>
+      <Project>{BEA846D2-38AE-9391-C32F-59D1EB6FBA02}</Project>
       <Name>Unity.Timeline</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.TextMeshPro.csproj">
-      <Project>{C66E1154-CA40-8B41-EA46-CD191FD80873}</Project>
+      <Project>{1E58E46B-5F3F-17F4-C397-06F63073A696}</Project>
       <Name>Unity.TextMeshPro</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.UI.csproj">
-      <Project>{12C90D86-79E1-794C-D988-E6965FF19ADB}</Project>
+      <Project>{C077DB25-9D3C-38C0-3423-04B8126E05F1}</Project>
       <Name>UnityEditor.UI</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.PlasticSCM.Editor.csproj">
-      <Project>{9354596D-3CD9-5C82-2576-B0304344F79D}</Project>
+      <Project>{C26F0687-C33A-844C-EFE4-4AB978E5610E}</Project>
       <Name>Unity.PlasticSCM.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Rider.Editor.csproj">
-      <Project>{09B4DA38-0CA1-E2D3-9773-476B0CCD9F92}</Project>
+      <Project>{2DA27BEA-6242-E28D-F4FC-FAC3036870F1}</Project>
       <Name>Unity.Rider.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.csproj">
-      <Project>{1442A777-3E9D-CDA8-FE84-7293F03FB614}</Project>
+      <Project>{B6727CE8-7DAA-E2BC-9617-E5B0E96AC448}</Project>
       <Name>UnityEngine.UI</Name>
     </ProjectReference>
   </ItemGroup>
