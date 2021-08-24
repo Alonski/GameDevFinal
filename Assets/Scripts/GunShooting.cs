@@ -5,13 +5,17 @@ using UnityEngine;
 public class GunShooting : MonoBehaviour
 {
     public GameObject GunInHand;
+    public GameObject GunOnGround;
     public GameObject aCamera;
     [SerializeField] public GameObject target;
     private LineRenderer lr;
     public GameObject MuzzleEnd;
     private AudioSource sound;
     public ParticleSystem MuzzleFlash;
-    public GameObject Enemy;
+
+    public GameObject[] Allies;
+    public GameObject[] Enemies;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,17 +26,21 @@ public class GunShooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("TouchBtn") && GunInHand.activeSelf )
+        if (Input.GetButtonDown("TouchBtn") && GunInHand.activeSelf)
         {
             RaycastHit hit;
-            if(Physics.Raycast(aCamera.transform.position, aCamera.transform.forward, out hit))
+            if (Physics.Raycast(aCamera.transform.position, aCamera.transform.forward, out hit))
             {
                 target.transform.position = hit.point;
                 StartCoroutine(ShowShot());
-                if(hit.transform.gameObject.name==Enemy.gameObject.name)
+
+                foreach (var enemy in Enemies)
                 {
-                    Animator a = Enemy.GetComponent<Animator>();
-                    a.SetBool("IsDying", true);
+                    if (hit.transform.gameObject.name == enemy.gameObject.name)
+                    {
+                        Animator a = enemy.GetComponent<Animator>();
+                        a.SetBool("IsDying", true);
+                    }
                 }
             }
         }

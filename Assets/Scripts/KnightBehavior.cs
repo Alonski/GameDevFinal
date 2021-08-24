@@ -11,6 +11,14 @@ public class KnightBehavior : MonoBehaviour
     private Animator anim;
     private NavMeshAgent agent;
     public GameObject target;
+
+    public Transform[] groundGuns;
+    public GameObject heldGun;
+
+    private GameObject chosenGun;
+
+    private bool hasGun = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,15 +36,47 @@ public class KnightBehavior : MonoBehaviour
     void GotoNextPoint()
     {
         // Returns if no points have been set up
-        if (points.Length == 0)
+        if (points.Length == 0 || anim.GetBool("IsDying"))
+        {
+
+            agent.isStopped = true;
             return;
+        }
+
+        if (!hasGun)
+        {
+            var i = 0;
+            Transform closestGun = null;
+            foreach (var gun in groundGuns)
+            {
+                if (gun == null)
+                {
+                    continue;
+                }
+                var distanceFromGun = getDistanceFromObject(gun);
+                var distanceFromClosestGun = getDistanceFromObject(closestGun);
+                if (distanceFromGun < distanceFromClosestGun)
+                {
+                    i++;
+                    closestGun = gun;
+                }
+            }
+            chosenGun = closestGun.gameObject;
+            GoToPosition(closestGun.position);
+            return;
+        }
 
         // Set the agent to go to the currently selected destination.
-        agent.destination = points[destPoint].position;
+        GoToPosition(points[destPoint].position);
 
         // Choose the next point in the array as the destination,
         // cycling to the start if necessary.
         destPoint = (destPoint + 1) % points.Length;
+    }
+
+    void GoToPosition(Vector3 position)
+    {
+        agent.destination = position;
     }
 
     // Update is called once per frame
@@ -44,8 +84,20 @@ public class KnightBehavior : MonoBehaviour
     {
         // Choose the next destination point when the agent gets
         // close to the current one.
-        if (!agent.pathPending && agent.remainingDistance < 0.5f)
-            GotoNextPoint();
+        if (!agent.pathPending && agent.remainingDistance < 1f)
+        {
+            if (chosenGun != null)
+            {
+                hasGun = true;
+                Destroy(chosenGun);
+
+                heldGun.SetActive(true);
+            }
+            else
+            {
+                GotoNextPoint();
+            }
+        }
 
         //agent.SetDestination(target.transform.position);
         /*
@@ -61,5 +113,10 @@ public class KnightBehavior : MonoBehaviour
                  anim.SetBool("IsWalking", false);
         }
         */
+    }
+
+    private float getDistanceFromObject(Transform objectTransform)
+    {
+        return objectTransform is null ? float.MaxValue : Vector3.Distance(transform.position, objectTransform.position);
     }
 }
